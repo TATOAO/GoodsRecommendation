@@ -15,7 +15,7 @@ class GoodCollections:
         self.good_collections.pop(good.id)
 
     def __repr__(self) -> str:
-        return "\n".join([good for good in self.good_collections.values()])
+        return "\n".join([str(good) for good in self.good_collections.values()])
 
     def __str__(self) -> str:
         return self.__repr__()
