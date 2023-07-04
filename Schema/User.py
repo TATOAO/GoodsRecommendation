@@ -1,22 +1,18 @@
-from dataclasses import dataclass, field
 from typing import List, Optional
+
+from pydantic import BaseModel
+
 from .Good import Good
 
-@dataclass
-class BaseUser:
-    aopsid: str=''
-    city: str=''
+
+class BaseUser(BaseModel):
+    aopsid: str = ""
+    city: str = ""
 
 
-
-@dataclass
 class GoodsRecUser(BaseUser):
-    cart: Optional[List[str]] = field(default_factory=list)
+    cart: Optional[List[str]] = []
 
 
-
-@dataclass
 class MyOrderCenterRecUser(BaseUser):
-    history_goods: Optional[List[str]] = field(default_factory=list)
-
-
+    history_goods: Optional[List[str]] = []
