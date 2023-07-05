@@ -1,21 +1,22 @@
 from collections import defaultdict
 
+from Data.DataCollections import DataCollections
 from Schema.Good import Good
 
 
-class GoodCollections(dict):
+class GoodCollections(DataCollections):
     def __init__(self):
         # another extract dict with property
         self.category4_map = defaultdict(set)
         self.city_map = defaultdict(set)
 
-    def update_good(self, good: Good):
-        self.remove_good(good)
+    def update_data(self, good: Good):
+        self.remove_data(good)
         self[good.id] = good
         self.category4_map[good.cat4].add(good)
         self.city_map[good.city].add(good)
 
-    def remove_good(self, good: Good):
+    def remove_data(self, good: Good):
         if good.id in self:
             self.pop(good.id)
 

@@ -1,0 +1,3 @@
+config:
+  kafka:
+    bootstrap_servers=["22.22.22.22"]
