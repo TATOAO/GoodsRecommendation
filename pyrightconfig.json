@@ -1,5 +1,6 @@
 {
     "executionEnvironments": [
         {"root": "."}
-    ]
+    ],
+	"pythonPath": "/home/atatlan/anaconda3/bin/python"
 }

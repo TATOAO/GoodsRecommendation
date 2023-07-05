@@ -87,3 +87,6 @@ for good in goods:
     gc.update_good(g1)
 
 print(gc["100"])
+import ipdb
+
+ipdb.set_trace()

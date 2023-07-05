@@ -1,7 +1,9 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 
 class Good(BaseModel):
+    model_config = ConfigDict(frozen=True)
+
     id: str = ""
     title: str = ""
     price: float = -1.0
@@ -15,8 +17,8 @@ class Good(BaseModel):
     short_name: str = ""
     jigou: str = ""
 
-    def get(self, key, default_value):
-        try:
-            return getattr(self, key)
-        except AttributeError:
-            return default_value
+    # def get(self, key, default_value):
+    #     try:
+    #         return getattr(self, key)
+    #     except AttributeError:
+    #         return default_value
