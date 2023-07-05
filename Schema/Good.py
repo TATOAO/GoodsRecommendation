@@ -17,8 +17,14 @@ class Good(BaseModel):
     short_name: str = ""
     jigou: str = ""
 
-    # def get(self, key, default_value):
-    #     try:
-    #         return getattr(self, key)
-    #     except AttributeError:
-    #         return default_value
+    def get(self, key, default_value):
+        try:
+            return getattr(self, key)
+        except AttributeError:
+            return default_value
+
+    def __eq__(self, other):
+        return self.id == other.id
+
+    def __hash__(self):
+        return hash(self.id)
